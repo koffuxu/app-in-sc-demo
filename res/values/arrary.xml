@@ -1,0 +1,7 @@
+<resources>
+    <string-array name="list_preference">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+    </string-array>
+</resources>
