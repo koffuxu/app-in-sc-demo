@@ -10,5 +10,18 @@
             android:dialogTitle="list_dialog_title"
             />
     </PreferenceCategory>
+    <!-- preference screen is a another view show -->
+    <PreferenceScreen
+        android:key="screen"
+        android:title="screen"
+        android:summary="Screen Preference"
+        >
+        <SwitchPreference
+            android:key="switch"
+            android:title="switch"
+            android:summary="Switch Preference"
+            />
+    
+    </PreferenceScreen>
 
 </PreferenceScreen>
