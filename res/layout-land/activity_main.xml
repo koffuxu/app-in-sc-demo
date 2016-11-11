@@ -2,13 +2,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginLeft="40dip"
      >
 
     <Button
         android:id="@+id/btUsb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btUsb"/>
+        android:text="@string/btUsb"
+        android:onClick="onClickForTestUsb"/>
     <Button
         android:id="@+id/bt1"
         android:layout_width="wrap_content"
@@ -29,6 +31,14 @@
         android:layout_alignLeft="@id/bt2"
         android:layout_below="@id/bt2"
         android:text="@string/bt3"/>
-    
+     <Button
+        android:id="@+id/bt4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/bt3"
+        android:layout_below="@id/bt3"
+        android:text="@string/bt4"
+        android:onClick="onClickForBitmap"/>
+   
 
 </RelativeLayout>

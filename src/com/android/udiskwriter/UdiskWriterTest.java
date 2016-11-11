@@ -39,13 +39,14 @@ import java.io.InputStream;
 public class UdiskWriterTest extends Activity {
     static final String TAG = "KoffuKit";
     static final String filename = "testfile_0201_kf";
-    static final String filecontent= "test content \n more...";
+    static final String filecontent= "test content more...";
     //get the external sdcard path
     String exStorageState = Environment.getExternalStorageState();
     String exStorage = Environment.getExternalStorageDirectory().toString();
 
     //the *real external* sdcard path
-    String SD_PATH = "/storage/external_storage/sdcard1";
+    //String SD_PATH = "/storage/external_storage/sdcard1";
+    String SD_PATH = "/storage/DEB6-8C90";
     //the *real external* udisk path
     String USB_PATH ="/storage/external_storage/udisk0";
     
@@ -53,6 +54,7 @@ public class UdiskWriterTest extends Activity {
     private Button btEnable = null;
     private Button btDisable = null;
     private Button btState = null;
+    private Button bt4 = null;
     private WifiManager wifiManager = null;
 
     @Override
@@ -61,19 +63,11 @@ public class UdiskWriterTest extends Activity {
         // load layout xml file
         setContentView(R.layout.activity_main);
         
-        Log.d(TAG, "the external storage state is " + exStorageState);
-        Log.d(TAG, "the external storage is " + exStorage);
+        bt4 = (Button)findViewById(R.id.bt4);
 
-        //write filename in /data/data/com.android.udiskwriter/files/testfile_0201_kf 
-        //content is:test content
-        //no need permission
-        doInterlWriteTest();
+        Log.e(TAG, "the external storage state is " + exStorageState);
+        Log.e(TAG, "the external storage is " + exStorage);
 
-        //storage/emulated/0 means sdcard0
-        doExternalWriteTest();
-
-        doRealExtWriteTest();
-        
         /*
          * Wifi Test 
          */
@@ -105,6 +99,30 @@ public class UdiskWriterTest extends Activity {
            }
        });
 
+
+    }
+
+    /*
+     * Bitmap Test
+     */
+    public void onClickForBitmap(View view) {
+        Toast.makeText(UdiskWriterTest.this, "Click Button Bitmap Test", Toast.LENGTH_SHORT).show();
+
+    }
+    
+    public void onClickForTestUsb(View view) {
+        Toast.makeText(UdiskWriterTest.this, "Click Button USB Test", Toast.LENGTH_SHORT).show();
+
+        //write filename in /data/data/com.android.udiskwriter/files/testfile_0201_kf 
+        //content is:test content
+        //no need permission
+        doInterlWriteTest();
+
+        //storage/emulated/0 means sdcard0
+        doExternalWriteTest();
+
+        doRealExtWriteTest();
+        
     }
 
     private void doInterlWriteTest() {
@@ -135,13 +153,18 @@ public class UdiskWriterTest extends Activity {
     }
     private void doRealExtWriteTest() {
         File file = new File(SD_PATH, "testFile_usb_1");
-        Log.d(TAG,"file attr:"+file.canWrite() + "; " + file.canRead());
+        Log.e(TAG,"file attr:"+file.canWrite() + "; " + file.canRead());
         try {
             FileOutputStream fos = new FileOutputStream(file);
             byte[] buffer = filecontent.getBytes();
-            fos.write(buffer);
+           // for(int i=0; i<10000; i++) {
+              //  for (int j=0; i<1000; j++) {
+                    fos.write(buffer);
+             //   }
+
+            //}
             fos.close();
-            Log.d(TAG, "do U disk write succsful!");
+            Log.e(TAG, "do U disk write succsful!");
         } catch (Exception e) {
             e.printStackTrace();
         }
