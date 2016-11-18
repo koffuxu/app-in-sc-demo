@@ -23,4 +23,9 @@
     <string name="bt2">Disable Wifi</string>
     <string name="bt3">Wifi State</string>
     <string name="bt4">Bitmap Test</string>
+    <string name="bt5">Copy Log</string>
+
+    <string name="ready">Ready Go...</string>
+    <string name="work">Start Copy</string>
+
 </resources>

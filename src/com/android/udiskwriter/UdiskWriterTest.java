@@ -27,6 +27,7 @@ import android.util.Log;
 import android.os.Environment;
 import android.content.Context;
 import android.net.wifi.WifiManager;
+import android.content.Intent;
 
 //java lib
 import java.io.File; 
@@ -123,6 +124,15 @@ public class UdiskWriterTest extends Activity {
 
         doRealExtWriteTest();
         
+    }
+
+    /*
+     * for test copy Logs File
+     */
+    public void onClickCopyFiles(View view) {
+        Intent i = new Intent(UdiskWriterTest.this, CopyLogActivity.class);
+        startActivity(i);
+
     }
 
     private void doInterlWriteTest() {

@@ -39,6 +39,15 @@
         android:layout_below="@id/bt3"
         android:text="@string/bt4"
         android:onClick="onClickForBitmap"/>
+     <Button
+        android:id="@+id/bt5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/bt4"
+        android:layout_below="@id/bt4"
+        android:text="@string/bt5"
+        android:onClick="onClickCopyFiles"/>
+
    
 
 </RelativeLayout>
